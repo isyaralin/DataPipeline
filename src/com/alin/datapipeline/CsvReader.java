@@ -6,11 +6,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class CsvReader {
-    public static void main(String[] args){
+    public ArrayList<Transaction> readCsv(String filePath){
+        ArrayList<Transaction> transactions = new ArrayList<>();
         try {
             BufferedReader br = new BufferedReader(new FileReader("sample.csv"));
 
-            ArrayList<Transaction> transactions = new ArrayList<>();
             String line;
 
             while ((line = br.readLine()) != null){
@@ -33,5 +33,7 @@ public class CsvReader {
         catch (Exception e){
             System.out.println("An error occured while reading csv file " + e.getMessage());
         }
+
+        return transactions;
     }
 }
