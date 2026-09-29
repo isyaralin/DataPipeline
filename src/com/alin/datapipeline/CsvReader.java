@@ -12,6 +12,7 @@ public class CsvReader {
             BufferedReader br = new BufferedReader(new FileReader("sample.csv"));
 
             String line;
+            br.readLine();
 
             while ((line = br.readLine()) != null){
                 String[] values =  line.split(",");
