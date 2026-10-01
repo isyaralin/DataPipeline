@@ -1,6 +1,9 @@
 package com.alin.datapipeline;
 
 public class TransactionValidator {
+    public boolean validateTransaction(Transaction transaction){
+
+    }
 }
 
 
