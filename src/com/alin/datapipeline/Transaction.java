@@ -9,12 +9,19 @@ public class Transaction {
     private String country;
     private LocalDateTime timestamp;
 
-    // Since the constructor defines everything private
-    // When we try to call Transaction transaction in an TransactionValidator or any class that calls and uses transaction instance
-    // We will not have access to the instances and it will give errors.
-    // So we need to define some public classes that other classes can access and use the instances of the private constructors
-    // Thats why we added these return types, when the method getId() is called in any other class,
-    // It will have the access to the Id of the transaction, (same for other methods)
+    /*
+     * The fields of this class are private, which means other classes
+     * cannot access them directly.
+     *
+     * For example, TransactionValidator cannot directly access:
+     * transaction.amount
+     *
+     * To allow other classes to read these private fields, we define
+     * public getter methods.
+     *
+     * When getId() is called from another class, it returns the id
+     * of the Transaction object. The same applies to the other getters.
+     */
     public int getId(){
         return id;
     }
