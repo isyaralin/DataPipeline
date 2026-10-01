@@ -23,7 +23,7 @@ public class Transaction {
         return userId;
     }
 
-    public double amount(){
+    public double getAmount(){
         return amount;
     }
 
