@@ -1,6 +1,8 @@
 package com.alin.datapipeline;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +16,11 @@ public class Main {
         TransactionValidator validator = new TransactionValidator();
         // Create a new ArrayList to store the valid transactions
         ArrayList<Transaction> validTransactions = new ArrayList<>();
+
+        // Add to handle the transactions
+        TransactionTransformer transformer = new TransactionTransformer();
+
+        HashMap<String, Integer> countryAndCount = transformer.countByCountry(validTransactions);
 
         if (args.length == 0) {
             System.out.println("There is not enough argument to parse.");
@@ -31,6 +38,18 @@ public class Main {
                 }
             }
 
+            double totalAmount = transformer.calculateTotal(validTransactions);
+            double average = transformer.averageTransaction(validTransactions);
+
+            Set<String> countries = countryAndCount.keySet();
+
+            for (String country : countries){
+                int count = countryAndCount.get(country);
+                System.out.println("Country of Transaction: " + country + " Count of transactions: " + count);
+            }
+
+            System.out.println("Total amount of transactions: " + totalAmount);
+            System.out.println("Average amount of transactions: " + average);
 
             System.out.println("Total transactions read: " + transactions.size());
             System.out.println("Total transactions valid: " + validTransactions.size());
