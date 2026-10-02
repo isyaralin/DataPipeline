@@ -27,6 +27,25 @@ public class TransactionValidator {
         return true;
     }
 
+    public ValidationError getValidationError(Transaction transaction){
+
+        if (transaction.getId() <= 0) {
+            return ValidationError.INVALID_ID;
+        }
+        if (transaction.getUserId() <= 0) {
+            return ValidationError.INVALID_ID;
+        }
+        if (transaction.getAmount() <= 0){
+            return ValidationError.INVALID_AMOUNT;
+        }
+        if (transaction.getCountry() == null) {
+            return ValidationError.INVALID_COUNTRY;
+        }
+        if (transaction.getTimestamp() == null) {
+            return ValidationError.INVALID_TIMESTAMP;
+        }
+        return null;
+    }
 }
 
 // To do:
