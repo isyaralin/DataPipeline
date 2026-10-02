@@ -48,11 +48,17 @@ public class Main {
                 System.out.println("Country of Transaction: " + country + " Count of transactions: " + count);
             }
 
+            // Report: total, valid, invalid
+            int invalidTransactions = transactions.size() - validTransactions.size();
+            System.out.println("Total transactions read: " + transactions.size());
+            System.out.println("Total transactions valid: " + validTransactions.size());
+            System.out.println("Total transactions invalid: " + invalidTransactions);
+
+
             System.out.println("Total amount of transactions: " + totalAmount);
             System.out.println("Average amount of transactions: " + average);
 
-            System.out.println("Total transactions read: " + transactions.size());
-            System.out.println("Total transactions valid: " + validTransactions.size());
+
         }
     }
 }
