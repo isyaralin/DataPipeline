@@ -40,7 +40,7 @@ public class TransactionValidator {
 
     // Check if the transaction error returns an error type
     // Use the enum class you created and check in which type it falls under
-    // Then use this function above to check if transaction is valid or not 
+    // Then use this function above to check if transaction is valid or not
     public ValidationError getValidationError(Transaction transaction){
 
         if (transaction.getId() <= 0) {
