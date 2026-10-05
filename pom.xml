@@ -10,6 +10,11 @@
     <artifactId>datapipeline</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -19,5 +24,3 @@
     </dependencies>
 
 </project>
-
-
