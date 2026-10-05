@@ -1,11 +1,22 @@
 package com.alin.datapipeline;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
+
+        try{
+            Connection connection = DatabaseConnection.getConnection();
+            System.out.println("Connected to database successfully");
+            connection.close();
+        } catch (SQLException e){
+            System.out.println("Connection failed");
+            e.printStackTrace();
+        }
 
         CsvReader csvReader = new CsvReader();
         // when the csvReader reads the file

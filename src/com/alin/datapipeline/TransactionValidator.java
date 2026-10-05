@@ -1,10 +1,12 @@
 package com.alin.datapipeline;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 public class TransactionValidator {
 
-    private final Set<String> validCountries = Set.of(
+    private final Set<String> validCountries = new HashSet<>(Arrays.asList(
             "AF", "AL", "DZ", "AS", "AD", "AO", "AI", "AQ", "AG", "AR",
             "AM", "AW", "AU", "AT", "AZ", "BS", "BH", "BD", "BB", "BY",
             "BE", "BZ", "BJ", "BM", "BT", "BO", "BQ", "BA", "BW", "BV",
@@ -30,7 +32,7 @@ public class TransactionValidator {
             "TL", "TG", "TK", "TO", "TT", "TN", "TR", "TM", "TC", "TV",
             "UG", "UA", "AE", "GB", "US", "UM", "UY", "UZ", "VU", "VE",
             "VN", "VG", "VI", "WF", "EH", "YE", "ZM", "ZW"
-    );
+    ));
 
     // Check if a single transaction is valid
     // It is valid if it does not return any of the error resons
